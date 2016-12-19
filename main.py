@@ -42,11 +42,11 @@ for i in range(count_of_messages):
 
 heatmap *= np.pi / np.max(heatmap)
 
-color = lambda value: [np.sin(value) * 255, 0, (1 - np.sin(value)) * 255]
+color = lambda value: [np.sin(value) * 200, 0, (1 - np.sin(value)) * 200]
 
 heatmap = np.tile(list(map(color, heatmap)), (300, 1, 1)).astype(np.uint8)
 
 img = Image.fromarray(heatmap).resize((600, 200), Image.BOX)
 img.show()
 
-img.save(USER_ID, '.png')
+img.save(USER_ID + '.png')
